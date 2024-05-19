@@ -62,4 +62,11 @@ public class BookController {
         return "redirect:/available_books";
     }
 
+    @RequestMapping("/editBook/{id}")
+
+    public ModelAndView editBooks(@PathVariable("id") int id ){
+        Book b = service.getBookById(id);
+       return new ModelAndView("bookEdit", "book", b);
+    }
+
 }
